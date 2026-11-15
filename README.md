@@ -1,40 +1,45 @@
-# Sartorial — starter website
+# SARTORIAL — improved starter for Spain
 
-Este paquete contiene una primera versión funcional del frontend basada en la especificación y el HTML del PDF de Sartorial.
+This is an improved working base, NOT a legally approved or payment-ready online shop.
 
-## Qué incluye
-- Landing page responsive con estética editorial oscura.
-- Secciones de marca, tejidos, proceso y configuración de camisa.
-- Selector de idioma ES / EN / IT para los textos principales.
-- Formulario de pedido: tejido, iniciales, modo de medidas, seis medidas o talla estándar, datos de contacto y consentimiento.
-- Guía textual de medidas.
-- Temporizador de cierre de lote los días 15 y último día del mes.
-- Código inicial de Google Apps Script para guardar solicitudes en Google Sheets.
+## Included
+- Existing HTML/CSS/JS starter retained.
+- Three supplied Adapted Line campaign images copied into `assets/`.
+- Adapted Line editorial section and navigation link added.
+- Existing form remains a request form and does not collect payment.
+- Google Apps Script is not activated until a real endpoint is configured.
 
-## Qué NO está todavía listo para producción
-- No hay cobro con tarjeta, cálculo de envío, confirmación de pago ni panel privado de pedidos.
-- El formulario no envía nada hasta configurar `APPS_SCRIPT_URL` en `app.js`.
-- El envío con Apps Script `no-cors` no permite al navegador verificar que Google haya guardado la fila. Debe probarse con pedidos ficticios y comprobarse la hoja manualmente.
-- El vídeo del PDF parece usar un ID de Google Drive como si fuera un ID de YouTube. No se ha inventado un vídeo sustituto; el bloque indica dónde añadir el vídeo real.
-- Las imágenes del PDF son enlaces externos de Google Photos/Drive. Si esos enlaces dejan de funcionar o no son públicos, sustitúyelos por archivos propios en `assets/` y actualiza `src` en `index.html`.
-- No incluye un administrador visual. Esta versión es un frontend estático; para editar contenido desde un panel sin tocar código habrá que integrarlo en WordPress/WooCommerce o añadir un CMS.
-- Antes de producción hay que revisar textos legales, privacidad/RGPD, protección anti-spam, seguridad, copias de seguridad, política de devoluciones, impuestos y requisitos del país donde opere la empresa.
+## Confirmed product direction
+- Sales market: Spain.
+- Collections: Ready to Wear, Made to Measure (MTM), Adapted Line.
+- Men's and women's models.
+- Adapted Line is a collection for specific needs; do not invent technical/medical claims.
+- Measurements only; no diagnoses, medical documents or body photos.
+- Initials up to 3; customer chooses from a supplied design gallery; custom drawing +€10 (confirm before publishing).
+- Three Adapted Line campaign images are in `assets/`.
 
-## Probar localmente
-Abre `index.html` en un navegador. Para evitar limitaciones del navegador, es mejor usar la extensión Live Server de VS Code o cualquier servidor local estático.
+## Not yet confirmed — do not invent
+Seller legal name/form, NIF/CIF, registered address, official email, domain, collection prices, shipping prices/destinations, delivery commitments, return address, final Adapted Line features, drawing gallery, valid measurement video, payment account and verified backend.
 
-## Publicar en GitHub
-1. Crea un repositorio privado llamado `sartorial`.
-2. Sube `index.html`, `styles.css`, `app.js`, `assets/`, `google-apps-script/` y este README.
-3. No publiques claves, contraseñas, datos de clientes ni URLs privadas de servicios.
+## Hostinger deployment
+1. Keep GitHub as the code/source repository.
+2. In Hostinger: Websites → Manage site → Advanced → Git (or Import site → Deploy from GitHub, if available on your plan).
+3. Connect GitHub, select the repository and `main` branch.
+4. Set the deployment root to the directory containing `index.html`.
+5. Deploy to a compatible web-hosting plan and connect the chosen domain.
+6. Test HTTPS, images, mobile layout, navigation and form before public launch.
 
-## Conectar Google Sheets (solo pruebas)
-1. Crea una hoja de cálculo.
-2. Abre Extensiones > Apps Script.
-3. Copia `google-apps-script/Code.gs`.
-4. Guarda y despliega como aplicación web. El acceso público puede exponer el endpoint a spam; úsalo solo para pruebas hasta añadir medidas de seguridad.
-5. Copia la URL de despliegue en `CONFIG.APPS_SCRIPT_URL` dentro de `app.js`.
-6. Haz una solicitud ficticia y confirma manualmente que aparece en la hoja.
+Hostinger documents Git deployment for custom HTML/PHP websites on supported web/cloud plans. Verify availability in your account.
 
-## Importante
-No se debe presentar el formulario como un checkout completo. Para vender con pago online se necesita integrar un proveedor de pagos y asociar de forma segura el estado del pago con el pedido en el backend.
+## Mandatory launch gates
+- Identify/register the seller and obtain correct Spanish legal/tax details.
+- Have Spanish e-commerce/privacy counsel review Privacy Policy, Cookie Policy, Legal Notice, Terms, shipping/returns and withdrawal wording.
+- Implement a real cookie-consent manager; reject non-essential cookies as easily as accept; block optional trackers before consent.
+- Add GDPR notices, retention schedule, rights-request workflow, processor agreements and security controls.
+- Confirm all prices, taxes, delivery costs and product details.
+- Implement secure backend validation, spam protection, durable order storage and confirmation emails.
+- If using Stripe, create Checkout Sessions server-side and verify signed webhooks. A browser redirect is not proof of payment.
+- Test successful, failed, duplicate and abandoned orders; desktop and mobile.
+- Set up backups, updates, monitoring and domain email.
+
+Do not accept real customer measurements or payments until backend, privacy information and operational processes have been reviewed and tested.
